@@ -920,8 +920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motorForce: 5000
-  breakForce: 3000
-  maxSteerAngle: 70
+  breakForce: 10000
+  maxSteerAngle: 20
   frontLeftWheelCollider: {fileID: 4072066047282905626}
   frontRightWheelCollider: {fileID: 4072066048105526211}
   rearLeftWheelCollider: {fileID: 4072066047139435670}

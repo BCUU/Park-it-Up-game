@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/prototype1/Scenes/level1.unity
     guid: 84729eeda748340d0955715b6a50b370
+  - enabled: 1
+    path: Assets/prototype1/Scenes/level2.unity
+    guid: e42b59ec6e9dd0543b6ef5ef5a604d60
+  - enabled: 1
+    path: Assets/prototype1/Scenes/level3.unity
+    guid: 26d3fe9f9623e5149b97cc41515af02e
+  - enabled: 1
+    path: Assets/prototype1/Scenes/level4.unity
+    guid: 7550a92bc0f3c4244a7b6338a1cba753
+  - enabled: 1
+    path: Assets/prototype1/Scenes/levellast.unity
+    guid: 94e54ae2741a9bf41ac926ace50a1350
   m_configObjects: {}

@@ -40,7 +40,7 @@ public class menucontroller : MonoBehaviour
     }
     public void exitbutton()
     {
-        
+        Application.Quit();
     }
 
 
@@ -99,7 +99,7 @@ public class menucontroller : MonoBehaviour
     private void Start()
     {
        
-        cars_number = 4 ;
+        cars_number = 0 ;
 
         //mainManager.asf=false;
     }
@@ -110,9 +110,10 @@ public class menucontroller : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log(mainManager.ars_number);
+        //Debug.Log(mainManager.ars_number);
         mainManager.ars_number= cars_number ;
         select_car();
+  
 
     }
     public void select_car()
@@ -135,32 +136,26 @@ public class menucontroller : MonoBehaviour
             }
         }
     }
+    public GameObject show_panel;
 
-    /*public void save_number()
+
+
+
+    private void OnMouseDown()
     {
-        SaveData data = new SaveData();
-        data.cars_number = cars_number;
-
-        string json = JsonUtility.ToJson(data);
-
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-    }
-    public void load_number()
-    {
-        string path = Application.persistentDataPath + "/savefile.json";
-        if (File.Exists(path))
+        if (cars_number==0)
         {
-            string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            show_panel.SetActive(true);
 
-            cars_number = data.cars_number;
         }
-    }*/
-
-
-    /*[System.Serializable]
-    class SaveData
+    }
+    private void OnMouseUp()
     {
-        public int cars_number;
-    }*/
+        if (cars_number == 0)
+        {
+            show_panel.SetActive(false);
+
+        }
+    }
+
 }

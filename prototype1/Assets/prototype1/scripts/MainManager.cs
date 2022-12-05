@@ -7,25 +7,38 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
     public int ars_number;
-    public bool controlbool=true;
+    public bool controlbool=false;
     public bool asf=true;
     public GameObject[] cars;
+    
 
     public void Awake()
     {
         dontdestroy();
     }
 
-    
+    int cortrol=1;
     private void Update()
     {
         setcar();
+        if (SceneManager.GetActiveScene().buildIndex == cortrol && SceneManager.GetActiveScene().buildIndex !=0 )
+        {
+
+            cortrol++;
+            controlbool = true;
+
+        }
 
         
     }
+    /*public void get_cars()
+    {
+        PlayerPrefs.SetInt(nameof(ars_number), ars_number);
+    }*/
     public void setcar()
     {
-        if (controlbool == true && SceneManager.GetActiveScene().buildIndex == 1)
+        
+        if (controlbool == true/* && SceneManager.GetActiveScene().buildIndex == 1||SceneManager.GetActiveScene().buildIndex==2*/)
         {
             Debug.Log("11");
             // spawnpoint.gameObject.GetComponent<Transform>().position = new Vector3();

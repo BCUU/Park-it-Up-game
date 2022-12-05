@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class parkManager : MonoBehaviour
 {
-    public levelManager levelman;
-
-
     GameObject car;
     Rigidbody playerRB;
     bool front = false;
     bool back = false;
+    public int levelcontroller = 0;
     private void Start()
     {
+       // levelcontroller = PlayerPrefs.GetInt(nameof(levelcontroller));
+        PlayerPrefs.SetInt(nameof(levelcontroller), 0);
         addrb();
     }
     public void addrb()
@@ -54,21 +55,11 @@ public class parkManager : MonoBehaviour
         {
             Debug.Log("player here");
             //CoinCalculator(100);
-            
             front = false;
             back = false;
-            levelman.adc = true;
+            PlayerPrefs.SetInt(nameof(levelcontroller), 1);
             
+
         }
-    }
-    public void CoinCalculator(int money)
-    {
-        if (PlayerPrefs.HasKey("moneyy"))
-        {
-            int oldscore = PlayerPrefs.GetInt("moneyy");
-            PlayerPrefs.SetInt("moneyy", oldscore + money);
-        }
-        else
-            PlayerPrefs.SetInt("moneyy", 5000);
     }
 }
