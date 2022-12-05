@@ -108,9 +108,11 @@ GameObject:
   - component: {fileID: 3394508}
   - component: {fileID: 2347162}
   - component: {fileID: 1622218990189248518}
+  - component: {fileID: -7623022696547682432}
+  - component: {fileID: -2961993412740290589}
   m_Layer: 0
   m_Name: Veh_Bus_Blue_Z
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +199,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7799a29fdee308341b16b65d8a002357, type: 3}
+--- !u!54 &-7623022696547682432
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126218}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-2961993412740290589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5772ecf527518644aac3a992ecd87201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Turnspeed: 2
+  horizontalInput: 0
+  verticalnput: 0
+  horsepower: 26000
 --- !u!1 &150944
 GameObject:
   m_ObjectHideFlags: 0

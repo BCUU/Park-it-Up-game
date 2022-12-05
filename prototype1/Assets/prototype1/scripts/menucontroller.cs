@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.IO;
+using System;
 
 public class menucontroller : MonoBehaviour
 {
+    
+
+
     public GameObject start_button;
     public GameObject exit_button;
     public GameObject deising_button;
@@ -44,7 +49,7 @@ public class menucontroller : MonoBehaviour
     public Button van_button;
     public Button bus_button;
     public Button armor_button;
-    public int cars_number;
+    public int cars_number=0;
     public void Check_car1()
     {
         red_car_button.image.color = Color.green;
@@ -93,25 +98,69 @@ public class menucontroller : MonoBehaviour
 
     private void Start()
     {
-        cars_number = 0;
+       
+        cars_number = 4 ;
+
+        //mainManager.asf=false;
     }
+   
 
     public GameObject[] cars;
+    public MainManager mainManager;
     private void Update()
+    {
+
+        Debug.Log(mainManager.ars_number);
+        mainManager.ars_number= cars_number ;
+        select_car();
+
+    }
+    public void select_car()
     {
         for (int i = 0; i < cars.Length; i++)
         {
-            if (cars_number==i)
+            if (cars_number == i)
             {
                 for (int z = 0; z < cars.Length; z++)
                 {
-                    if (i!=z)
+                    if (i != z)
                     {
                         cars[z].gameObject.SetActive(false);
                     }
                 }
                 cars[i].gameObject.SetActive(true);
+                //mainManager.ars_number = i;
+
+
             }
         }
     }
+
+    /*public void save_number()
+    {
+        SaveData data = new SaveData();
+        data.cars_number = cars_number;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+    public void load_number()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            cars_number = data.cars_number;
+        }
+    }*/
+
+
+    /*[System.Serializable]
+    class SaveData
+    {
+        public int cars_number;
+    }*/
 }
